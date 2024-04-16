@@ -1,0 +1,28 @@
+<div>You are logged in as {{ login }}</div>
+<form action="{{ url_for('logout') }}">
+    <div>
+        <input type="submit" value="Logout">
+    </div>
+</form>
+
+<form action="{{ url_for('patch_user', id=user.id) }}" method="post">
+    <div>
+      <label>
+          Name *
+          <input type="text" name="name" value="{{ user.name }}">
+      </label>
+      {% if errors %}
+          <div>{{ errors.name }}</div>
+      {% endif %}
+    </div>
+    <div>
+        <label>
+            E-mail *
+            <input type="email" name="email" value="{{ user.email }}">
+        </label>
+        {% if errors %}
+            <div>{{ errors.email }}</div>
+        {% endif %}
+      </div>
+    <input type="submit" value="Update">
+</form>

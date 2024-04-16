@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>This is inherited template index2.html from index.html</h1>
+    <h1>The link from the bottom was removed</h1>
+    <h1>Current User id = {{ name }}</h1>
+    <h1>Nickname for use = user-{{ name }}</h1>
+{% endblock %}
+
+{% block link %}
+{% endblock %}

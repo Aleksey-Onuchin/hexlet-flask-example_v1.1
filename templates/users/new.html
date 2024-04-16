@@ -1,0 +1,30 @@
+<div>You are logged in as {{ login }}</div>
+<form action="{{ url_for('logout') }}">
+    <div>
+        <input type="submit" value="Logout">
+    </div>
+</form>
+
+<form action="{{ url_for('add_new_user') }}" method="post">
+    <div>
+      <label>
+        Nickname
+        <input type="text" name="name" value="{{ user.name|default('', true) }}">
+      </label>
+    </div>
+    {% if errors.name %}
+      <div>{{ errors.name }}</div>
+    {% endif %}
+    <div>
+      <label>
+        Email
+        <input type="email" name="email" value="{{ user.email|default('', true) }}">
+      </label>
+    </div>
+    {% if errors.email %}
+      <div>{{ errors.email }}</div>
+    {% endif %}
+    <div>
+        <input type="submit" value="Sign Up">
+    </div>
+</form>

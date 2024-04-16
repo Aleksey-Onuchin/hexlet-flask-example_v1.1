@@ -1,0 +1,16 @@
+<div>You are logged in as {{ login }}</div>
+<form action="{{ url_for('logout') }}">
+    <div>
+        <input type="submit" value="Logout">
+    </div>
+</form>
+
+<h1>User {{ user['name'] }}</h1>
+<ul>
+    <li>User ID: {{ user['id'] }}</li>
+    <li>User's name: {{ user['name'] }}</li>
+    <li>E-mail: {{ user['email'] }}</li>
+</ul>
+<a href="{{ url_for('edit_user', id=user.id) }}">Edit User's data</a>
+<br/>
+<a href="{{ url_for('show_users') }}">Back to the users list</a>

@@ -1,0 +1,13 @@
+{% block content1 %}
+    <h1>Example site</h1>
+    <h1>Uses different technicks</h1>
+{% endblock %}
+
+{% block content %}
+    <h1>id = {{ name }}</h1>
+    <h1>nickname = user-{{ name }}</h1>
+{% endblock %}
+
+{% block link %}
+    <a href="/users2/{{ name }}">Check this link</a>
+{% endblock %}
